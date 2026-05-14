@@ -101,8 +101,7 @@ const handleImport = (e) => {
 };
   const filtradas = busqueda.trim()
     ? personas.filter((p) => p.dni.includes(busqueda.trim()))
-    : personas;
-
+    : personas;  
   const cambiar = (key, val) => setForm((f) => ({ ...f, [key]: val }));
 
   function borrar(id) {

@@ -1,13 +1,20 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+
+// IMPORTANTE: Un solo punto porque están en la misma carpeta raíz (src)
+import LoginPage from "./pages/LoginPage"; 
 import PanelPage from "./pages/PanelPage";
 
-export default function App() {
+function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        {/* <Route path="/" element={<div>login acá</div>} /> */}
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/panel" element={<PanelPage />} />
+        <Route path="/" element={<Navigate to="/login" />} />
       </Routes>
-    </BrowserRouter>
-  );
+    </Router>
+  )
 }
+
+export default App
