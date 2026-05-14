@@ -13,7 +13,7 @@ const LoginPage = () => {
   // Usuario hardcodeado
   const usuarioTest = {
     usuario: 'admin',
-    password: '1234'
+    password: '12345'
   }
 
   const handleLogin = (e) => {
