@@ -21,7 +21,7 @@ const LoginPage = () => {
 
     // Validación básica
     if (!usuario || !password) {
-      setError('Todos los campos son obligatorios!!!!!')
+      setError('Todos los campos son obligatorios!!!!!!!!!')
       return
     }
 
