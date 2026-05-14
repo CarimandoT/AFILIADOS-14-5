@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import './LoginPage.css'
+
 const LoginPage = () => {
   const navigate = useNavigate()
 
@@ -29,24 +31,28 @@ const LoginPage = () => {
       password === usuarioTest.password
     ) {
       setError('')
-      navigate('/dashboard')
+      navigate('/panel')
     } else {
       setError('Usuario o contraseña incorrectos')
     }
   }
 
   return (
-    <div className="h-screen flex items-center justify-center bg-slate-100">
+    <div className="login-container">
       <form
+        className="login-card"
         onSubmit={handleLogin}
-        className="bg-white p-8 rounded-2xl shadow-lg w-96"
       >
-        <h1 className="text-3xl font-bold mb-6 text-center">
+        <h1 className="login-title">
           Login
         </h1>
 
-        <div className="mb-4">
-          <label className="block mb-2">
+        <p className="login-subtitle">
+          Ingresá al sistema
+        </p>
+
+        <div className="login-group">
+          <label>
             Usuario
           </label>
 
@@ -54,13 +60,12 @@ const LoginPage = () => {
             type="text"
             value={usuario}
             onChange={(e) => setUsuario(e.target.value)}
-            className="w-full border rounded-lg p-3"
             placeholder="Ingrese usuario"
           />
         </div>
 
-        <div className="mb-4">
-          <label className="block mb-2">
+        <div className="login-group">
+          <label>
             Contraseña
           </label>
 
@@ -68,20 +73,19 @@ const LoginPage = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full border rounded-lg p-3"
             placeholder="Ingrese contraseña"
           />
         </div>
 
         {error && (
-          <div className="bg-red-100 text-red-600 p-3 rounded mb-4">
+          <div className="login-error">
             {error}
           </div>
         )}
 
         <button
           type="submit"
-          className="w-full bg-slate-900 text-white py-3 rounded-lg hover:bg-slate-800 transition"
+          className="login-button"
         >
           Ingresar
         </button>
