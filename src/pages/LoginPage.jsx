@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import './LoginPage.css'
+import './Loginpage.css'
 
 const LoginPage = () => {
   const navigate = useNavigate()
@@ -21,7 +21,7 @@ const LoginPage = () => {
 
     // Validación básica
     if (!usuario || !password) {
-      setError('Todos los campos son obligatorios!!!!!!!!!')
+      setError('Todos los campos son obligatorios!!!!!')
       return
     }
 

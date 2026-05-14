@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 
 // IMPORTANTE: Un solo punto porque están en la misma carpeta raíz (src)
 import LoginPage from "./pages/LoginPage"; 
-import PanelPage from "./pages/PanelPage";
+import PanelPage from "./pages/panelPage";
 
 function App() {
   return (
